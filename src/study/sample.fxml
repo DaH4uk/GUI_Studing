@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.image.*?>
+<?import java.lang.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.collections.*?>
+
+<GridPane alignment="center" hgap="10" prefHeight="459.0" prefWidth="640.0" vgap="10" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="study.Controller">
+   <columnConstraints>
+      <ColumnConstraints />
+   </columnConstraints>
+   <rowConstraints>
+      <RowConstraints maxHeight="22.0" minHeight="10.0" prefHeight="17.0" />
+      <RowConstraints maxHeight="440.0" minHeight="428.0" prefHeight="433.0" />
+      <RowConstraints />
+      <RowConstraints />
+   </rowConstraints>
+   <children>
+      <TabPane maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minHeight="-Infinity" minWidth="-Infinity" prefHeight="447.0" prefWidth="640.0" tabClosingPolicy="UNAVAILABLE" GridPane.rowIndex="1">
+        <tabs>
+          <Tab text="Tab 1">
+            <content>
+              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="171.0" prefWidth="375.0">
+                     <children>
+                        <Button fx:id="btnGetImage" layoutX="14.0" layoutY="14.0" mnemonicParsing="false" onAction="#btnGetImage" text="Get Image from URL" />
+                        <TextArea fx:id="textURL" layoutX="14.0" layoutY="45.0" prefHeight="324.0" prefWidth="610.0" promptText="Enter URL here..." />
+                        <Button layoutX="503.0" layoutY="14.0" mnemonicParsing="false" onAction="#btnGetFile" text="Get Image from File" />
+                     </children>
+                  </AnchorPane>
+            </content>
+          </Tab>
+          <Tab text="Tab 2">
+            <content>
+              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                     <children>
+                        <Button fx:id="btnView" layoutX="14.0" layoutY="14.0" mnemonicParsing="false" onAction="#btnView" text="View" />
+                        <ComboBox fx:id="cmbFormat" layoutX="476.0" layoutY="14.0" prefWidth="150.0" promptText="Select format">
+                            <items>
+                                <FXCollections fx:factory="observableArrayList">
+                                    <String fx:value="png" />
+                                    <String fx:value="jpg" />
+                                </FXCollections>
+                            </items>
+
+                               </ComboBox>
+                        <ImageView fx:id="imageView" fitHeight="350.0" fitWidth="610.0" layoutX="14.0" layoutY="48.0" pickOnBounds="true" preserveRatio="true" />
+
+                           </children>
+                  </AnchorPane>
+            </content>
+          </Tab>
+        </tabs>
+      </TabPane>
+      <MenuBar prefHeight="40.0" prefWidth="640.0">
+        <menus>
+          <Menu mnemonicParsing="false" text="File">
+               <items>
+              <MenuItem mnemonicParsing="false" onAction="#save" text="Save Image" />
+               </items>
+          </Menu>
+          <Menu mnemonicParsing="false" text="Options">
+            <items>
+              <MenuItem mnemonicParsing="false" onAction="#exit" text="Exit" />
+            </items>
+          </Menu>
+        </menus>
+      </MenuBar>
+   </children>
+</GridPane>
